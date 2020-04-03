@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/w3.css">
+<link rel="stylesheet" href="./css/Raleway">
+<link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+<style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+    <title>{{ title }}</title>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <hr>
+    <div class="w3-container">
+      <h5>Navigation</h5>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding">Overview</a>
+      <a href="#External" class="w3-bar-item w3-button w3-padding">External Footprint</a>
+      {% for ip in listofips %}
+      {{ ip }}
+      {% endfor %}
+      <a href="#Email" class="w3-bar-item w3-button w3-padding">Email Enumeration</a>
+    </div>
+  </nav>
+  
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+    <!-- Header -->
+<header class="w3-container" style="padding-top:22px">
+        <h1><center>Surface Scan Report</center></b></h1>
+        <h1><center>{{ title }}</center></b></h1>
+      </header>
+      <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-quarter">
+          <div class="w3-container w3-red w3-padding-16">
+            <div class="w3-left"><i class="fa fa-server w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>{{ ExternalHostNumber }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>External Hosts</h4>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div class="w3-container w3-blue w3-padding-16">
+            <div class="w3-left"><i class="fa fa-sitemap w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>{{ SubdomainNumber }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Subdomains</h4>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div class="w3-container w3-teal w3-padding-16">
+            <div class="w3-left"><i class="fa fa-envelope-o w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>{{ EmailAddressNum }} </h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Email Addresses</h4>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div class="w3-container w3-orange w3-text-white w3-padding-16">
+            <div class="w3-left"><i class="fa fa-id-card-o w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>{{ BreachedEmails }}</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Breached Emails</h4>
+          </div>
+        </div>
+      </div>
+    
+<hr>
+<div class="w3-container">
+     <h2 id="External">External Footprint</h2>
+{% for section in sections %}
+    {{ section }}
+{% endfor %}
+
+    <h2 id="Email">Email Enumeration</h2>
+    {{ EmailTable }}
+ 
+    <!-- Footer -->
+ <footer class="w3-container w3-padding-16 w3-light-grey">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
+</div>
+  <!-- End page content -->
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{{ IP }}</h3>
+
+    <h4>Subdomains:</h4>
+    {% for subdomain in Subdomains %}
+    <li>{{ subdomain }}</li>
+    {% endfor %}
+    <br>
+    <h4>Open Ports:</h4>
+    {{ OpenPortsTable }}
+    <br>
+    <h4>Vulnerabilities:</h4>
+    {% for vuln in Vulnerabilities %}
+    <li>{{ vuln }}</li>
+    {% endfor %}
+    <br>
+    <hr style="border: 1px solid #616161;" />
