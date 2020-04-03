@@ -27,4 +27,4 @@ Have I been Pwned API -> Used to cross check email addresses against breach list
 ## Output
 Html report will be placed into the './Reports' directory. CSS files needed to be moved in line with reports if they are to be provided externally.
 
-<img src="Images/Report1"> <img src="Images/Report2">
+<img src="Images/Report1.png"> <img src="Images/Report2.png">
